@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2C48B975ADE2C64FC6AB7AC9 /* Pods_CPics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA05E583AC54F78FBF903DA /* Pods_CPics.framework */; };
+		9FC45DAA1DEF26E9008A4A75 /* viewFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC45DA81DEF26E9008A4A75 /* viewFilter.swift */; };
+		9FC45DAB1DEF26E9008A4A75 /* viewFilter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC45DA91DEF26E9008A4A75 /* viewFilter.xib */; };
+		9FC45DAE1DEF6667008A4A75 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC45DAD1DEF6667008A4A75 /* FilterTableViewController.swift */; };
 		AE1A89271DDE1F5B009F9138 /* CAParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A89261DDE1F5B009F9138 /* CAParse.swift */; };
 		AE57B1541DDE1D2F000CE13D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B1531DDE1D2F000CE13D /* AppDelegate.swift */; };
 		AE57B1591DDE1D2F000CE13D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE57B1571DDE1D2F000CE13D /* Main.storyboard */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		42F865AAF112D9AF581FDBEA /* Pods-CPics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPics/Pods-CPics.debug.xcconfig"; sourceTree = "<group>"; };
 		53BCBA42A074C9817A9248F2 /* Pods-CPics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPics.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPics/Pods-CPics.release.xcconfig"; sourceTree = "<group>"; };
+		9FC45DA81DEF26E9008A4A75 /* viewFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewFilter.swift; sourceTree = "<group>"; };
+		9FC45DA91DEF26E9008A4A75 /* viewFilter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = viewFilter.xib; sourceTree = "<group>"; };
+		9FC45DAD1DEF6667008A4A75 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		AE1A89261DDE1F5B009F9138 /* CAParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAParse.swift; sourceTree = "<group>"; };
 		AE57B1501DDE1D2F000CE13D /* CPics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE57B1531DDE1D2F000CE13D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +57,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9FC45DAC1DEF26EE008A4A75 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9FC45DA81DEF26E9008A4A75 /* viewFilter.swift */,
+				9FC45DA91DEF26E9008A4A75 /* viewFilter.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		AE57B1471DDE1D2F000CE13D = {
 			isa = PBXGroup;
 			children = (
@@ -72,9 +87,11 @@
 		AE57B1521DDE1D2F000CE13D /* CPics */ = {
 			isa = PBXGroup;
 			children = (
+				9FC45DAC1DEF26EE008A4A75 /* Views */,
 				AE57B1531DDE1D2F000CE13D /* AppDelegate.swift */,
 				AE57B1571DDE1D2F000CE13D /* Main.storyboard */,
 				AE57B16A1DDE1DB3000CE13D /* TableViewController.swift */,
+				9FC45DAD1DEF6667008A4A75 /* FilterTableViewController.swift */,
 				AE1A89261DDE1F5B009F9138 /* CAParse.swift */,
 				AE57B15A1DDE1D2F000CE13D /* Assets.xcassets */,
 				AE57B15C1DDE1D2F000CE13D /* LaunchScreen.storyboard */,
@@ -154,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FC45DAB1DEF26E9008A4A75 /* viewFilter.xib in Resources */,
 				AE57B15E1DDE1D2F000CE13D /* LaunchScreen.storyboard in Resources */,
 				AE57B15B1DDE1D2F000CE13D /* Assets.xcassets in Resources */,
 				AE57B1591DDE1D2F000CE13D /* Main.storyboard in Resources */,
@@ -217,6 +235,8 @@
 			files = (
 				AE1A89271DDE1F5B009F9138 /* CAParse.swift in Sources */,
 				AE57B1541DDE1D2F000CE13D /* AppDelegate.swift in Sources */,
+				9FC45DAA1DEF26E9008A4A75 /* viewFilter.swift in Sources */,
+				9FC45DAE1DEF6667008A4A75 /* FilterTableViewController.swift in Sources */,
 				AE57B16B1DDE1DB3000CE13D /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
