@@ -7,5 +7,6 @@ target 'CPics' do
 
   # Pods for CPics
 pod 'Parse'
+pod 'YALSideMenu', '~> 2.0'
 
 end

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FCD8E02250923B561EEC3DEEBD0A07D9'
-               BlueprintName = 'Pods-CPics'
+               BlueprintIdentifier = '19FECFE68FD8669C8F2BA01309A43C6A'
+               BlueprintName = 'YALSideMenu'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-CPics.framework'>
+               BuildableName = 'YALSideMenu.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
