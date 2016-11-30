@@ -2,17 +2,17 @@ PODS:
   - Bolts/Tasks (1.8.4)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
-  - YALSideMenu (2.0.1)
+  - SlideMenuControllerSwift (3.0.0)
 
 DEPENDENCIES:
   - Parse
-  - YALSideMenu (~> 2.0)
+  - SlideMenuControllerSwift
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
-  YALSideMenu: 4d6b90ea44dcdded18a99e46b676e4ad51d9c6bb
+  SlideMenuControllerSwift: 9c0a84f9a3fba51681debd7be77617094562ebcc
 
-PODFILE CHECKSUM: 8a3b86f57a09513d4bf6823065d66ec2c6863199
+PODFILE CHECKSUM: 042146f9e2e24991b7285b22740446249d0e318b
 
 COCOAPODS: 1.1.1
