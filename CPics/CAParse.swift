@@ -4,7 +4,12 @@ import Bolts
 
 var serverInitialized = false
 
+
+
 class ParseServer {
+    
+    var member: PFObject? = nil
+    
     static let sharedInstance = ParseServer()
     private init() {
         if !serverInitialized {

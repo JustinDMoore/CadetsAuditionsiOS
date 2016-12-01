@@ -111,6 +111,7 @@ class FilterTableViewController: UITableViewController {
         //tableView.delegate = self
         //tableView.dataSource = self
         tableView.reloadData()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -140,6 +141,10 @@ class FilterTableViewController: UITableViewController {
         checkVisual_3.isOn = searchVisual3
     }
 
+    func done() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func setCorpsSwitches() {
         
         switch searchCorps {
@@ -216,6 +221,7 @@ class FilterTableViewController: UITableViewController {
             return 0
         }
     }
+
 //
 //    func refreshServer() {
 //        searchQuery.cancel()

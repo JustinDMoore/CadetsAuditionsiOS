@@ -8,10 +8,10 @@
 
 import UIKit
 import Parse
+import SlideMenuControllerSwift
 
 
-
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, filterProtocol {
+class MainViewController: SlideMenuController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UINavigationControllerDelegate, filterProtocol {
 
     let Server = ParseServer.sharedInstance
     var searchQuery = PFQuery(className: "Member")
@@ -53,13 +53,49 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         txtSearch.delegate = self
         txtSearch.addTarget(self, action: #selector(UITextFieldDelegate.textFieldShouldEndEditing(_:)), for: UIControlEvents.editingChanged)
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(MainViewController.filter))
+        txtSearch.frame = CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.size.width)! - 50, height: 30)
+        self.navigationItem.titleView = txtSearch
+        
+        let imageView = UIImageView(image: UIImage(named: "Search"))
+        imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        txtSearch.leftView = imageView
+        txtSearch.leftViewMode = .always
+        
+        addToolBar(textField: txtSearch)
         
         refreshServer()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+    }
+    
+    func addToolBar(textField: UITextField){
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(MainViewController.donePressed))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MainViewController.cancelPressed))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        
+        textField.delegate = self
+        textField.inputAccessoryView = toolBar
+    }
+    func donePressed(){
+        view.endEditing(true)
+        txtSearch.resignFirstResponder()
+    }
+    func cancelPressed(){
+        view.endEditing(true) // or do something
+        txtSearch.text = ""
+        txtSearch.resignFirstResponder()
+    }
+    
+    func filter() {
+        self.performSegue(withIdentifier: "filter", sender: self)
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool { // do stuff
@@ -166,6 +202,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         memberToOpen = arrayOfFilteredMembers?[indexPath.row]
+        self.performSegue(withIdentifier: "profile", sender: self)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -262,6 +299,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             vc.searchVisual1 = searchVisual1
             vc.searchVisual2 = searchVisual2
             vc.searchVisual3 = searchVisual3
+        } else if segue.identifier == "profile" {
+            Server.member = memberToOpen
         }
     }
  
@@ -331,9 +370,4 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
 
-    
-//    func filterComplete(returnedArray: [PFObject]) {
-//        arrayOfFilteredMembers = returnedArray
-//        tableView.reloadData()
-//    }
 }
