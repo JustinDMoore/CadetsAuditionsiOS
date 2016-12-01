@@ -103,14 +103,6 @@ class MainViewController: SlideMenuController, UITableViewDataSource, UITableVie
         return true
     }
     
-    @IBAction func takePicture(_ sender: Any) {
-        imagePicker =  UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
     func refreshServer() {
         arrayOfAllMembers?.removeAll()
         let query = PFQuery(className: "Member")
@@ -123,72 +115,9 @@ class MainViewController: SlideMenuController, UITableViewDataSource, UITableVie
             }
         }
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        imagePicker.dismiss(animated: true, completion: nil)
-        
-        var image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        image = fixOrientation(img: image!)
-        let imageData = UIImageJPEGRepresentation(image!, 0.5)
-        
-        //let imageData = UIImagePNGRepresentation(image!)
-        //create a parse file to store in cloud
-        let parseImageFile = PFFile(name: "picture.png", data: imageData!)
-        
-        parseImageFile?.saveInBackground(block: { (success: Bool, error: Error?) in
-            if success {
-                self.memberToOpen?["picture"] = parseImageFile
-                self.memberToOpen?.saveEventually({ (done: Bool, err: Error?) in
-                    self.tableView.reloadData()
-                })
-            }
-        })
-    }
-    
-    
-    func fixOrientation(img:UIImage) -> UIImage {
-        
-        if (img.imageOrientation == UIImageOrientation.up) {
-            return img;
-        }
-        
-        UIGraphicsBeginImageContextWithOptions(img.size, false, img.scale);
-        let rect = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height)
-        img.draw(in: rect)
-        
-        let normalizedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext();
-        return normalizedImage;
-        
-    }
 
-    @IBAction func setNumber(_ sender: Any) {
-        //1. Create the alert controller.
-        
-        let alert = UIAlertController(title: memberToOpen?["name"] as? String, message: "Set number:", preferredStyle: .alert)
-        
-        //2. Add the text field. You can configure it however you need.
-        alert.addTextField { (textField) in
-            //textField.text = "Some default text."
-             textField.keyboardType = UIKeyboardType.numberPad
-        }
-        
-        // 3. Grab the value from the text field, and print it when the user clicks OK.
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-            let textField = alert.textFields![0] // Force unwrapping because we know it exists.
-            self.memberToOpen?.setObject(Int(textField.text!)!, forKey: "number")
-            self.memberToOpen?.saveEventually()
-            self.tableView.reloadData()
-            textField.resignFirstResponder()
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
-            
-        }))
-        
-        // 4. Present the alert.
-        self.present(alert, animated: true, completion: nil)
-    }
+
+
 
     // MARK: - Table view data source
     

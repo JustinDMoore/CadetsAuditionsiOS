@@ -11,6 +11,9 @@
 		9FC45DAA1DEF26E9008A4A75 /* viewFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC45DA81DEF26E9008A4A75 /* viewFilter.swift */; };
 		9FC45DAB1DEF26E9008A4A75 /* viewFilter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC45DA91DEF26E9008A4A75 /* viewFilter.xib */; };
 		9FC45DAE1DEF6667008A4A75 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC45DAD1DEF6667008A4A75 /* FilterTableViewController.swift */; };
+		9FD9E6B01DF0A36200C0A9E3 /* RatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9E6AF1DF0A36200C0A9E3 /* RatingsViewController.swift */; };
+		9FD9E6B21DF0A6C600C0A9E3 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9E6B11DF0A6C600C0A9E3 /* NotesTableViewController.swift */; };
+		9FD9E6B41DF0AD7600C0A9E3 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD9E6B31DF0AD7600C0A9E3 /* NoteTableViewCell.swift */; };
 		9FDD0AB11DF080D1006E0865 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD0AB01DF080D1006E0865 /* ProfileViewController.swift */; };
 		9FDD0AB31DF081E3006E0865 /* TabProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD0AB21DF081E3006E0865 /* TabProfileViewController.swift */; };
 		AE1A89271DDE1F5B009F9138 /* CAParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A89261DDE1F5B009F9138 /* CAParse.swift */; };
@@ -27,6 +30,9 @@
 		9FC45DA81DEF26E9008A4A75 /* viewFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewFilter.swift; sourceTree = "<group>"; };
 		9FC45DA91DEF26E9008A4A75 /* viewFilter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = viewFilter.xib; sourceTree = "<group>"; };
 		9FC45DAD1DEF6667008A4A75 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
+		9FD9E6AF1DF0A36200C0A9E3 /* RatingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsViewController.swift; sourceTree = "<group>"; };
+		9FD9E6B11DF0A6C600C0A9E3 /* NotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		9FD9E6B31DF0AD7600C0A9E3 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		9FDD0AB01DF080D1006E0865 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9FDD0AB21DF081E3006E0865 /* TabProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabProfileViewController.swift; sourceTree = "<group>"; };
 		AE1A89261DDE1F5B009F9138 /* CAParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAParse.swift; sourceTree = "<group>"; };
@@ -96,8 +102,11 @@
 				AE57B1571DDE1D2F000CE13D /* Main.storyboard */,
 				9FDD0AB21DF081E3006E0865 /* TabProfileViewController.swift */,
 				9FDD0AB01DF080D1006E0865 /* ProfileViewController.swift */,
+				9FD9E6AF1DF0A36200C0A9E3 /* RatingsViewController.swift */,
 				AE57B16A1DDE1DB3000CE13D /* MainViewController.swift */,
 				9FC45DAD1DEF6667008A4A75 /* FilterTableViewController.swift */,
+				9FD9E6B31DF0AD7600C0A9E3 /* NoteTableViewCell.swift */,
+				9FD9E6B11DF0A6C600C0A9E3 /* NotesTableViewController.swift */,
 				AE1A89261DDE1F5B009F9138 /* CAParse.swift */,
 				AE57B15A1DDE1D2F000CE13D /* Assets.xcassets */,
 				AE57B15C1DDE1D2F000CE13D /* LaunchScreen.storyboard */,
@@ -241,9 +250,12 @@
 			files = (
 				9FDD0AB11DF080D1006E0865 /* ProfileViewController.swift in Sources */,
 				AE1A89271DDE1F5B009F9138 /* CAParse.swift in Sources */,
+				9FD9E6B21DF0A6C600C0A9E3 /* NotesTableViewController.swift in Sources */,
+				9FD9E6B41DF0AD7600C0A9E3 /* NoteTableViewCell.swift in Sources */,
 				AE57B1541DDE1D2F000CE13D /* AppDelegate.swift in Sources */,
 				9FC45DAA1DEF26E9008A4A75 /* viewFilter.swift in Sources */,
 				9FC45DAE1DEF6667008A4A75 /* FilterTableViewController.swift in Sources */,
+				9FD9E6B01DF0A36200C0A9E3 /* RatingsViewController.swift in Sources */,
 				9FDD0AB31DF081E3006E0865 /* TabProfileViewController.swift in Sources */,
 				AE57B16B1DDE1DB3000CE13D /* MainViewController.swift in Sources */,
 			);
