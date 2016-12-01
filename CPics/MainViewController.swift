@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  MainViewController.swift
 //  CPics
 //
 //  Created by Justin Moore on 11/17/16.
@@ -9,7 +9,9 @@
 import UIKit
 import Parse
 
-class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, filterProtocol {
 
     let Server = ParseServer.sharedInstance
     var searchQuery = PFQuery(className: "Member")
@@ -17,6 +19,32 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     var arrayOfFilteredMembers: [PFObject]? = nil
     var memberToOpen: PFObject? = nil
     var imagePicker: UIImagePickerController!
+    
+    var searchCorps = 0
+    var searchTrumpet = false
+    var searchMellophone = false
+    var searchBaritone = false
+    var searchTuba = false
+    var searchSnare = false
+    var searchTenor = false
+    var searchBass = false
+    var searchFrontEnsemble = false
+    var searchColorGuard = false
+    var searchDrumMajor = false
+    var searchVets = false
+    var searchContracts = false
+    var searchAssigned = 0
+    
+    var searchMusicNone = false
+    var searchMusic1 = false
+    var searchMusic2 = false
+    var searchMusic3 = false
+    
+    var searchVisualNone = false
+    var searchVisual1 = false
+    var searchVisual2 = false
+    var searchVisual3 = false
+    
     
     @IBOutlet weak var txtSearch: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -32,7 +60,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool { // do stuff
@@ -200,19 +227,44 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         return cell
     }
- 
 
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "filter" {
+            let vc = segue.destination as! FilterTableViewController
+            vc.arrayOfAllMembers = arrayOfAllMembers
+            vc.arrayOfFilteredMembers = arrayOfAllMembers
+            vc.delegate = self
+            
+            vc.searchCorps = searchCorps
+            vc.searchTrumpet = searchTrumpet
+            vc.searchMellophone = searchMellophone
+            vc.searchBaritone = searchBaritone
+            vc.searchTuba = searchTuba
+            vc.searchSnare = searchSnare
+            vc.searchTenor = searchTenor
+            vc.searchBass = searchBass
+            vc.searchFrontEnsemble = searchFrontEnsemble
+            vc.searchColorGuard = searchColorGuard
+            vc.searchDrumMajor = searchDrumMajor
+            vc.searchVets = searchVets
+            vc.searchContracts = searchContracts
+            vc.searchAssigned = searchAssigned
+            
+            vc.searchMusicNone = searchMusicNone
+            vc.searchMusic1 = searchMusic1
+            vc.searchMusic2 = searchMusic2
+            vc.searchMusic3 = searchMusic3
+            
+            vc.searchVisualNone = searchVisualNone
+            vc.searchVisual1 = searchVisual1
+            vc.searchVisual2 = searchVisual2
+            vc.searchVisual3 = searchVisual3
+        }
     }
-    */
-    
+ 
     func addMemberToFilteredArray(member: PFObject) {
         //make sure they don't exist in filtered array, then add
         if !(arrayOfFilteredMembers?.contains(member))! {
@@ -248,4 +300,40 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             tableView.reloadData()
         }
     }
+    
+    func filterComplete(returnedData: [PFObject], searchCorps: Int, searchTrumpet: Bool, searchMellophone: Bool, searchBaritone: Bool, searchTuba: Bool, searchSnare: Bool, searchTenor: Bool, searchBass: Bool, searchFrontEnsemble: Bool, searchColorGuard: Bool, searchDrumMajor: Bool, searchVets: Bool, searchContracts: Bool, searchAssigned: Int, searchMusNone: Bool, searchMus1: Bool, searchMus2: Bool, searchMus3: Bool, searchVisNone: Bool, searchVis1: Bool, searchVis2: Bool, searchVis3: Bool) {
+        
+        arrayOfFilteredMembers = returnedData
+        self.searchCorps = searchCorps
+        self.searchTrumpet = searchTrumpet
+        self.searchMellophone = searchMellophone
+        self.searchBaritone = searchBaritone
+        self.searchTuba = searchTuba
+        self.searchSnare = searchSnare
+        self.searchTenor = searchTenor
+        self.searchBass = searchBass
+        self.searchFrontEnsemble = searchFrontEnsemble
+        self.searchColorGuard = searchColorGuard
+        self.searchDrumMajor = searchDrumMajor
+        self.searchVets = searchVets
+        self.searchContracts = searchContracts
+        
+        self.searchMusicNone = searchMusNone
+        self.searchMusic1 = searchMus1
+        self.searchMusic2 = searchMus2
+        self.searchMusic3 = searchMus3
+        
+        self.searchVisualNone = searchVisNone
+        self.searchVisual1 = searchVis1
+        self.searchVisual2 = searchVis2
+        self.searchVisual3 = searchVis3
+        
+        tableView.reloadData()
+    }
+
+    
+//    func filterComplete(returnedArray: [PFObject]) {
+//        arrayOfFilteredMembers = returnedArray
+//        tableView.reloadData()
+//    }
 }
