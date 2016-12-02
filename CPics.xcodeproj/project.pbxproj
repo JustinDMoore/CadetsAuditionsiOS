@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C48B975ADE2C64FC6AB7AC9 /* Pods_CPics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA05E583AC54F78FBF903DA /* Pods_CPics.framework */; };
+		9F353C571DF1D4CD00CDB9F2 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F353C561DF1D4CD00CDB9F2 /* LoginTableViewController.swift */; };
 		9FC45DAA1DEF26E9008A4A75 /* viewFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC45DA81DEF26E9008A4A75 /* viewFilter.swift */; };
 		9FC45DAB1DEF26E9008A4A75 /* viewFilter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC45DA91DEF26E9008A4A75 /* viewFilter.xib */; };
 		9FC45DAE1DEF6667008A4A75 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC45DAD1DEF6667008A4A75 /* FilterTableViewController.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		42F865AAF112D9AF581FDBEA /* Pods-CPics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPics/Pods-CPics.debug.xcconfig"; sourceTree = "<group>"; };
 		53BCBA42A074C9817A9248F2 /* Pods-CPics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPics.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPics/Pods-CPics.release.xcconfig"; sourceTree = "<group>"; };
+		9F353C561DF1D4CD00CDB9F2 /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		9FC45DA81DEF26E9008A4A75 /* viewFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewFilter.swift; sourceTree = "<group>"; };
 		9FC45DA91DEF26E9008A4A75 /* viewFilter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = viewFilter.xib; sourceTree = "<group>"; };
 		9FC45DAD1DEF6667008A4A75 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +38,7 @@
 		9FDD0AB01DF080D1006E0865 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9FDD0AB21DF081E3006E0865 /* TabProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabProfileViewController.swift; sourceTree = "<group>"; };
 		AE1A89261DDE1F5B009F9138 /* CAParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAParse.swift; sourceTree = "<group>"; };
-		AE57B1501DDE1D2F000CE13D /* CPics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE57B1501DDE1D2F000CE13D /* Cadets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cadets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE57B1531DDE1D2F000CE13D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE57B1581DDE1D2F000CE13D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE57B15A1DDE1D2F000CE13D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 		AE57B1511DDE1D2F000CE13D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE57B1501DDE1D2F000CE13D /* CPics.app */,
+				AE57B1501DDE1D2F000CE13D /* Cadets.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +102,7 @@
 				9FC45DAC1DEF26EE008A4A75 /* Views */,
 				AE57B1531DDE1D2F000CE13D /* AppDelegate.swift */,
 				AE57B1571DDE1D2F000CE13D /* Main.storyboard */,
+				9F353C561DF1D4CD00CDB9F2 /* LoginTableViewController.swift */,
 				9FDD0AB21DF081E3006E0865 /* TabProfileViewController.swift */,
 				9FDD0AB01DF080D1006E0865 /* ProfileViewController.swift */,
 				9FD9E6AF1DF0A36200C0A9E3 /* RatingsViewController.swift */,
@@ -143,7 +146,7 @@
 			);
 			name = CPics;
 			productName = CPics;
-			productReference = AE57B1501DDE1D2F000CE13D /* CPics.app */;
+			productReference = AE57B1501DDE1D2F000CE13D /* Cadets.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -252,6 +255,7 @@
 				AE1A89271DDE1F5B009F9138 /* CAParse.swift in Sources */,
 				9FD9E6B21DF0A6C600C0A9E3 /* NotesTableViewController.swift in Sources */,
 				9FD9E6B41DF0AD7600C0A9E3 /* NoteTableViewCell.swift in Sources */,
+				9F353C571DF1D4CD00CDB9F2 /* LoginTableViewController.swift in Sources */,
 				AE57B1541DDE1D2F000CE13D /* AppDelegate.swift in Sources */,
 				9FC45DAA1DEF26E9008A4A75 /* viewFilter.swift in Sources */,
 				9FC45DAE1DEF6667008A4A75 /* FilterTableViewController.swift in Sources */,
@@ -323,7 +327,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -367,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -388,10 +392,10 @@
 					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/Projects/CadetsAuditions/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CPics/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.yea.CadetAuditions.CPics;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Cadets;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -408,10 +412,10 @@
 					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/Projects/CadetsAuditions/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CPics/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.yea.CadetAuditions.CPics;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Cadets;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
