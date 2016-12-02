@@ -51,6 +51,9 @@ class MainViewController: SlideMenuController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.tableFooterView = UIView()
+        
         txtSearch.delegate = self
         txtSearch.addTarget(self, action: #selector(UITextFieldDelegate.textFieldShouldEndEditing(_:)), for: UIControlEvents.editingChanged)
 

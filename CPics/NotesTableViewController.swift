@@ -19,6 +19,7 @@ class NotesTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
+        tableView.tableFooterView = UIView()
         
         if let member = Server.member {
             self.member = member
@@ -33,7 +34,35 @@ class NotesTableViewController: UITableViewController {
     }
     
     func addTapped() {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Add Note", message: "Enter a text", preferredStyle: .alert)
         
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            
+        }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            print("Text field: \(textField?.text)")
+            if (textField?.text?.characters.count)! > 0 {
+                let newNote = PFObject(className: "MemberNotes")
+                newNote["note"] = textField?.text
+                newNote.setObject(self.member!, forKey: "member")
+                newNote.saveEventually { (done: Bool, err: Error?) in
+                    if done {
+                        self.arrayOfNotes?.append(newNote)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
     }
     
     func loadNotes() {
